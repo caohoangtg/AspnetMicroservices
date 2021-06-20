@@ -1,0 +1,17 @@
+1. create Entity and MongoDB.Driver(package)
+
+2. appsettings.json:
+  "DatabaseSettings": {
+    "ConnectionString": "mongodb://localhost:27017",
+    "DatabaseName": "ProductDb",
+    "CollectionName": "Products"
+  }
+3. Create ICatalogContext, CatalogContext, CatalogContextSeed
+
+4. add Repositories IProductRepository, ProductRepository
+
+5. create catalogController
+
+6. DI, StartUp.cs
+
+note: Update-Package -ProjectName Catalog.API
