@@ -1,0 +1,25 @@
+docker pull redis
+docker run -d -p 6379:6379 --name aspnetrun-redis redis
+docker logs -f aspnetrun-redis(container_name)
+---
+docker exec -it aspnetrun-redis /bin/bash
+redis-cli
+ping
+set key value
+get key
+---
+
+1. Create Project
+2. Create Entities
+3. REDIS: Install Microsoft.Extensions.Caching.StackExchangeRedis
+ -	services.AddStackExchangeRedisCache(opt =>
+            {
+                opt.Configuration = "localhost:6379";
+            });
+4. Repository
+	- IDistributedCache (using Microsoft.Extensions.Caching.Distributed;)
+	- JsonConvert (using Newtonsoft.Json;)
+	
+5. Controller
+6. Register in StartUp
+	- services.AddScoped<IBasketRepository, BasketRepository>();

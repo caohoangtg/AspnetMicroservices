@@ -1,6 +1,6 @@
 docker ps
 docker run -d -p 27017:27017 --name shopping-mongo mongo
-docker logs -f shopping-mongo
+docker logs -f shopping-mongo(container_name)
 docker exec -it shopping-mongo /bin/bash
 ---------------
 -REMOVE CONTAINER-
