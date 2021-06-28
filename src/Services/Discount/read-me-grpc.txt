@@ -1,0 +1,13 @@
+1. create project net core grpc
+2. copy folder and file: entities, Reponsitory, Extensions.
+3. copy startup.cs: services.AddScoped<IDiscountRepository, DiscountRepository>();
+   copy host from program.cs.
+   copy DatabaseSettings:ConnectionString from appsettings.json.
+4. build
+5. create new item protos (key: grpc): discount.proto
+6. create new DiscountService
+	- Get value form repository
+	- Map to entity to model
+7. install AutoMapper
+	- create DiscountProfile : Profile
+	- config AddAutoMapper to startup

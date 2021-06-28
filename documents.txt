@@ -2,6 +2,14 @@ docker ps
 docker run -d -p 27017:27017 --name shopping-mongo mongo
 docker logs -f shopping-mongo(container_name)
 docker exec -it shopping-mongo /bin/bash
+----------
+docker scan
+---------------
+-rebuild image-
+docker-compose build
+docker-compose up -d --build --force-recreate
+or
+docker-compose up --build
 ---------------
 -REMOVE CONTAINER-
 docker stop ContainerID
@@ -13,6 +21,9 @@ docker rmi ContainerID
 docker images
 docker image rm -f ImageID
 
+remove All images
+docker image prune -a
+
 ---------------
 RUN CONTAINER
 docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
@@ -23,7 +34,10 @@ docker ps -aq
 docker stop $(docker ps -aq)
 docker rm $(docker ps -aq)
 docker rmi $(docker images -q)
-
+---------
+http://localhost:9000/#!/home
+admin/selecao315
+===============
 ---------
 https://hub.docker.com/r/mongoclient/mongoclient/
 docker run -d -p 3000:3000 mongoclient/mongoclient

@@ -1,0 +1,25 @@
+//docker pull postgres
+
+add new image "postgres" to docker-compose.yml
+add new container "discountdb" to docker-compose.override.yml
+add volumn
+
+//docker pull dpage/pgadmin4
+
+docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
+
+http://localhost:5050/
+admin@huetho.com/123456
+use Postgres
+admin/123456
+
+Tools - Query Tool
+Tables - Refresh
+Right click nameTable
+	View/Edit Table with All Rows
+
+*code
+-entities
+-repositories
+-connectString
+-startUp
