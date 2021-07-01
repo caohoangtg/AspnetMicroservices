@@ -4,10 +4,20 @@
    copy host from program.cs.
    copy DatabaseSettings:ConnectionString from appsettings.json.
 4. build
-5. create new item protos (key: grpc): discount.proto
+5. create new item protos (key: grpc): discount.proto with "Server only"
 6. create new DiscountService
 	- Get value form repository
 	- Map to entity to model
 7. install AutoMapper
 	- create DiscountProfile : Profile
 	- config AddAutoMapper to startup
+	
+	====================
+	
+Discount gRPC Basket
+1. Basket.API add new "connected service": discount.proto with "Client"
+2. Create DiscountGrpcService.cs
+3. Handle in controller
+4. add to startup.cs
+	- services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>
+	- services.AddScoped<DiscountGrpcService>();
